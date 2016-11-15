@@ -1,27 +1,27 @@
-Variables, expressions, and statements
+Variables, expresiones y declaraciones
 ======================================
 
-Values and types
+Valores y tipos
 ----------------
 
-\index{value}
-\index{type}
-\index{string}
+\index{valor}
+\index{tipo}
+\index{cadena}
 
-A *value* is one of the basic things a program works
-with, like a letter or a number. The values we have seen so far are
-`1`, `2`, and "Hello, World!"
+Un *valor* es una de las cosas básicas con las que funciona un programa,
+como una letra o un número. Los valores que hemos visto hasta ahora son
+`1`, `2`, y "¡Hola, mundo!"
 
-These values belong to different *types*: `2`
-is an integer, and "Hello, World!" is a *string*, so
-called because it contains a "string" of letters. You (and the
-interpreter) can identify strings because they are enclosed in quotation
-marks.
+Esos valores pertenecen a *tipos* diferentes: `2`
+es un entero (*integer*), y "¡Hola, mundo!" es una cadena (*string*),
+llamada así porque contiene una "cadena" de letras. Tú (y también el
+intérprete) podéis identificar las cadenas porque van encerradas entre
+comillas.
 
-\index{quotation mark}
+\index{comillas}
 
-The `print` statement also works for integers. We use the
-`python` command to start the interpreter.
+La sentencia `print` funciona también con enteros. Usamos el comando
+`python` para iniciar el intérprete.
 
 ~~~~ {.python}
 python
@@ -29,38 +29,37 @@ python
 4
 ~~~~
 
-If you are not sure what type a value has, the interpreter can tell you.
+Si no estás seguro del tipo que tiene un valor, el intérprete te lo puede decir.
 
 ~~~~ {.python .trinket height="160"}
->>> type('Hello, World!')
+>>> type('¡Hola, mundo!')
 <class 'str'>
 >>> type(17)
 <class 'int'>
 ~~~~
 
-Not surprisingly, strings belong to the type `str` and
-integers belong to the type `int`. Less obviously, numbers
-with a decimal point belong to a type called `float`, because
-these numbers are represented in a format called *floating
-point*.
+No es sorprendente que las cadenas pertenezcan al tipo `str` y los
+enteros pertenezcan al tipo `int`. Pero resulta menos obvio que los números
+con punto decimal pertenezcan a un tipo llamado `float` (flotante), debido a
+que esos números se representan en un formato llamado *de punto flotante*.
 
-\index{type}
-\index{string type}
-\index{class!str}
-\index{int type}
-\index{class!int}
-\index{float type}
-\index{class!float}
+\index{tipo}
+\index{string (tipo)}
+\index{clase!str}
+\index{int (tipo)}
+\index{clase!int}
+\index{float (tipo)}
+\index{clase!float}
 
 ~~~~ {.python .trinket height="120"}
 >>> type(3.2)
 <class 'float'>
 ~~~~
 
-What about values like "17" and "3.2"? They look like numbers, but
-they are in quotation marks like strings.
+¿Y qué ocurre con valores como "17" y "3.2"? Parecen ser números, pero
+están entre comillas como las cadenas.
 
-\index{quotation mark}
+\index{comillas}
 
 ~~~~ {.python .trinket  height="160"}
 >>> type('17')
@@ -69,55 +68,55 @@ they are in quotation marks like strings.
 <class 'str'>
 ~~~~
 
-They're strings.
+Se trata de cadenas.
 
-When you type a large integer, you might be tempted to use commas
-between groups of three digits, as in `1,000,000`. This is
-not a legal integer in Python, but it is legal:
+Cuando tecleas un número grande, puedes sentir la tentación de usar puntos (o comas)
+para separar los grupos de tres dígitos, como en `1.000.000` o `1,000,000`. Estos no
+son enteros válidos en Python, pero esto sí que sería válido:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
 1 0 0
 ~~~~
 
-Well, that's not what we expected at all! Python interprets
-`1,000,000` as a comma-separated sequence of integers, which
-it prints with spaces between.
+Bien, pero ¡eso no es lo que esperábamos! Python interpreta
+`1,000,000` como una secuencia de enteros separados por comas, y
+los imprime con espacios entre ellos.
 
-\index{semantic error}
-\index{error!semantic}
-\index{error message}
+\index{semántico (error)}
+\index{error!semántico}
+\index{mensaje de error}
 
-This is the first example we have seen of a semantic error: the code
-runs without producing an error message, but it doesn't do the "right"
-thing.
+Este es el primer ejemplo que hemos visto hasta ahora de un error semántico:
+el código funciona sin provocar ningún mensaje de error, pero no hace las
+cosas "bien".
 
 Variables
 ---------
 
 \index{variable}
-\index{assignment statement}
-\index{statement!assignment}
+\index{sentencias de asignación}
+\index{sentencia!asignación}
 
-One of the most powerful features of a programming language is the
-ability to manipulate *variables*. A variable is a name
-that refers to a value.
+Una de las características más poderosas de un lenguaje de programación es la
+capacidad de manipular *variables*. Una variable es un nombre que
+identifica a un valor.
 
-An *assignment statement* creates new variables and gives
-them values:
+Una *sentencia de asignación* crea variables nuevas y les asigna
+valores:
 
 ~~~~ {.python}
->>> message = 'And now for something completely different'
+>>> mensaje = 'Y ahora algo completamente diferente'
 >>> n = 17
 >>> pi = 3.1415926535897931
 ~~~~
 
-This example makes three assignments. The first assigns a string to a
-new variable named `message`; the second assigns the integer
-`17` to `n`; the third assigns the (approximate)
-value of $\pi$ to `pi`.
+Este ejemplo realiza tres asignaciones. La primera asigna una cadena a una
+variable nueva llamada `mensaje`; la segunda asigna el valor entero
+`17` a `n`; la tercera asigna el valor (aproximado) de
+$\pi$ a `pi`.
 
-To display the value of a variable, you can use a print statement:
+Para mostrar el valor de una variable, se puede usar una sentencia print:
 
 ~~~~ {.python}
 >>> print(n)
@@ -126,10 +125,10 @@ To display the value of a variable, you can use a print statement:
 3.141592653589793
 ~~~~
 
-The type of a variable is the type of the value it refers to.
+El tipo de una variable es el tipo del valor al que identifica.
 
 ~~~~ {.python}
->>> type(message)
+>>> type(mensaje)
 <class 'str'>
 >>> type(n)
 <class 'int'>
@@ -137,26 +136,26 @@ The type of a variable is the type of the value it refers to.
 <class 'float'>
 ~~~~
 
-Variable names and keywords
----------------------------
+Nombres de variables y palabras claves
+--------------------------------------
 
-\index{keyword}
+\index{palabras claves}
 
-Programmers generally choose names for their variables that are
-meaningful and document what the variable is used for.
+Normalmente, los programadores eligen nombres para sus variables que
+tengan un significado y documenten para qué se usa esa variable.
 
-Variable names can be arbitrarily long. They can contain both letters
-and numbers, but they cannot start with a number. It is legal to use
-uppercase letters, but it is a good idea to begin variable names with a
-lowercase letter (you'll see why later).
+Los nombres de las variables pueden ser arbitrariamente largos. Pueden contener tanto
+letras como números, pero no pueden comenzar por un número. Es válido utilizar letras
+mayúsculas, pero es buena idea comenzar el nombre de las variables por una
+letra minúscula (luego veremos por qué).
 
-The underscore character (`_`) can appear in a name. It is often used in
-names with multiple words, such as `my_name` or
-`airspeed_of_unladen_swallow`. Variable names can start with an
-underscore character, but we generally avoid doing this unless we are
-writing library code for others to use.
+El carácter barra-baja (`_`) puede utilizarse en los nombres. Se usa con frecuencia
+en nombres que contienen varias palabras, como en `mi_nombre`, o
+`velocidad_de_vuelo_de_golondrina_sin_carga`. Los nombres de las variables pueden comenzar
+por un carácter barra-baja, pero generalmente eso se evita, a menos que se esté
+escribiendo librerías de código para ser utilizadas por otros.
 
-\index{underscore character}
+\index{carácter barra-baja}
 
 If you give a variable an illegal name, you get a syntax error:
 
